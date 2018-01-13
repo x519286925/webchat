@@ -1,0 +1,25 @@
+server:
+  context-path: /demo
+  port: 8800
+spring:
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/meetingsign?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: 123456
+  jpa:
+      hibernate:
+        ddl-auto: update
+        show-sql: true
+  http:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 1Mb
+newsUrl:
+   url: http://nannima.top:8800/demo
+wechat:
+   mpAppId: wx7d1daaadcfc050ab
+   mpAppSecret: a5a1001b8114dc81aea5a6225165f74c
+#  httpclient:
+#    enabled: true
+#Feign是自带断路器的，在D版本的Spring Cloud中，它没有默认打开。需要在配置文件中配置打开它，在配置文件加以下代码：
